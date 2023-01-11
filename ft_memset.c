@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 18:42:09 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/11 19:45:45 by jrosmari         ###   ########.fr       */
+/*   Created: 2023/01/11 19:18:22 by jrosmari          #+#    #+#             */
+/*   Updated: 2023/01/11 19:45:01 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t	ft_strlen(const char *s);
+void	*ft_memset(void *s, int c, size_t n);
 
-size_t	ft_strlen(const char *s)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned long	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (i < n)
+	{
+		((unsigned char *)s)[i] = c;
 		i++;
-	return (i);
+	}
+	return (s);
 }
 /*
 #include <stdio.h>
 
 int	main(void)
 {
-	char	str[] = "a b";
-	
-	printf("length of string [%s] is %lu", str, ft_strlen(str));
+	int	i = 8;
+	char	c = '@';
+
+	char	str[] = "This is a testing string";
+	printf("Printing testing string [%s]\n", str);
+	printf("Setting char [%c] %dx to string \n", c, i);
+	memset(str, c, i);
+	printf("Printing string after memset [%s]", str);
 	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:21:49 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/11 18:27:10 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:47:53 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int	ft_isprint(int c);
 
 int	ft_isprint(int c)
 {
-	if (c >= 32  && c <= 126)
+	if (c >= 32 && c <= 126)
 		return (16384);
 	else
 		return (0);
