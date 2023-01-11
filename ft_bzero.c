@@ -30,7 +30,7 @@ void	ft_bzero(void *s, size_t n)
 
 int	main(void)
 {
-	int i = 5;	
+	int i = 10;	
 
 	char	str[] = "This is a testing string";
 	printf("Printing testing string [%s]\n", str);
