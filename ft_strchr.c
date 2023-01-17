@@ -6,13 +6,11 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 12:45:08 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/15 16:30:12 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/17 20:28:14 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*ft_strchr(const char *s, int c);
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {		

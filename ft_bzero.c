@@ -6,13 +6,11 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 19:51:34 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/11 20:12:31 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/17 20:30:14 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-void	ft_bzero(void *s, size_t n);
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -38,5 +36,4 @@ int	main(void)
 	ft_bzero(str, i);
 	printf("Printing string after memset [%s]", str);
 	return (0);
-}
-*/
+}*/

@@ -6,13 +6,11 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 20:09:23 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/15 21:13:18 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/17 20:26:03 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-void	*ft_memcpy(void *dest, const void *src, size_t n);
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

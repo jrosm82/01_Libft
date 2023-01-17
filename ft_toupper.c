@@ -6,11 +6,11 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 16:43:15 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/15 17:13:09 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/17 20:30:00 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c);
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

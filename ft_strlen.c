@@ -6,13 +6,11 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:42:09 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/11 19:45:45 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/17 20:28:37 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-size_t	ft_strlen(const char *s);
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
