@@ -6,7 +6,7 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 15:28:31 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/17 20:29:15 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/21 15:17:57 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = 0;
+	if (c == '\0')
+		return ('\0');
 	while (*s != '\0')
 	{		
 		i++;
-		s++;		
+		s++;
 	}
-	s--,
-	i--;	
+	s--;
+	i--;
 	while (i > -1)
 	{		
 		if (*s == c)
@@ -31,6 +33,8 @@ char	*ft_strrchr(const char *s, int c)
 		s--;
 		i--;
 	}
+	if (c == '\0')
+		return ((char *)s);
 	return (NULL);
 }
 /*

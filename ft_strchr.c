@@ -6,20 +6,23 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 12:45:08 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/17 20:28:14 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/21 17:23:27 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
-{		
+{
+	c = c & 255;
 	while (*s != '\0')
 	{
 		if (*s == c)
 			return ((char *)s);
 		s++;
 	}
+	if (c == '\0')
+		return ((char *)s);
 	return (NULL);
 }
 /*
