@@ -6,7 +6,7 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:44:02 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/22 19:29:42 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/22 19:32:03 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	int_len(int nbr)
 	if (nbr == -2147483648)
 		return (10);
 	if (nbr == 0)
-		return (0);
+		return (1);
 	if (nbr < 0)
 		nbr = nbr * -1;
 	pos = 0;
