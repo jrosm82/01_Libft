@@ -6,7 +6,7 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 20:17:39 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/21 15:14:50 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/21 21:25:48 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 size_t	ft_strlcpy(char *dest, const char *src, size_t destsize);
+size_t	ft_strlcat(char *destination, const char *source, size_t size);
 void	ft_strclr(char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 
