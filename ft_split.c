@@ -6,7 +6,7 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:31:04 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/23 13:56:34 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:50:08 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ static int	wrd_cnt(char const *s, char c)
 	int	i;
 	int	cnt;
 
+	if (ft_strncmp(s, "", 1) == 0)
+	{
+		return (0);
+	}
 	i = 0;
 	cnt = 0;
 	if (c == '\0' || s == NULL)
@@ -55,7 +59,7 @@ static char	**write_split(char **split, char const *s, char c)
 			while (s[i + j] != c && s[i + j] != '\0')
 				j++;
 			split[word] = (char*)malloc(sizeof(char) * (j + 1));
-			if (split[word] == NULL)
+			if (!split[word])
 				return (NULL);
 			j = 0;
 			while (s[i] != c && s[i] != '\0')
@@ -76,14 +80,28 @@ char	**ft_split(char const *s, char c)
 	
 	char	**split;
 	int		words;
+	int	i;
 	
-	if (s == NULL)
-		return (NULL);	
-	if (!s)
-		return (NULL);
+	i = 0;
+	if (c == '\0' && ft_strlen(s) > 0)
+	{
+		split =(char**)malloc(sizeof(char*) * 2);
+		split[1] = 0;
+		i = ft_strlen(s);
+		split[0] = (char*)malloc(sizeof(char*) * (i + 1));
+		i = 0;
+		while (s[i] != '\0')
+		{
+			split[0][i] = s[i];
+			i++;
+		}
+		split[0][i] = '\0';
+		return (split);
+	}
+	
 	words = wrd_cnt(s, c);
 	split = (char**)malloc(sizeof(char*) * (words + 1));
-	if (split == NULL)
+	if (!split)
 		return (NULL);
 	split[words] = 0;
 	if (words != 0)
