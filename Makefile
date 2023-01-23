@@ -6,7 +6,7 @@
 #    By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 20:33:20 by jrosmari          #+#    #+#              #
-#    Updated: 2023/01/23 08:42:55 by jrosmari         ###   ########.fr        #
+#    Updated: 2023/01/23 08:52:48 by jrosmari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCS=ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 	ft_strjoin.c ft_strlcat.c ft_memchr.c ft_memcmp.c \
 	ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
 	ft_strtrim.c ft_itoa.c ft_putchar_fd.c ft_putstr_fd.c \
-	ft_putendl_fd.c ft_putnbr_fd.c ft_strmapi.c ft_striteri.c
+	ft_putendl_fd.c ft_putnbr_fd.c ft_strmapi.c ft_striteri.c \
+	ft_split.c
 
 OBJECTS=ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o \
 	ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o	\
@@ -28,7 +29,8 @@ OBJECTS=ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o \
 	ft_strjoin.o ft_strlcat.o ft_memchr.o ft_memcmp.o \
 	ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o \
 	ft_strtrim.o ft_itoa.o ft_putchar_fd.o ft_putstr_fd.o \
-	ft_putendl_fd.o ft_putnbr_fd.o ft_strmapi.o ft_striteri.o
+	ft_putendl_fd.o ft_putnbr_fd.o ft_strmapi.o ft_striteri.o \
+	ft_split.o
 
 INCLUDES=./
 
