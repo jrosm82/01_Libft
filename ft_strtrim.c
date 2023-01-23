@@ -6,13 +6,13 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 15:42:24 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/22 16:21:27 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:49:25 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_in_set(char c, char const *set)
+static int	in_str(char const *set, char c)
 {
 	int	i;
 
@@ -29,71 +29,40 @@ static int	is_in_set(char c, char const *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
-	int		j;
-	int		start;
-	int		end;
-	char	*trimmed;
+	int		left;
+	int		right;
+	char	*str;
 
-	// Find the start and end index of the trimmed string
-	i = 0;
-	start = 0;
-	end = 0;
-	while (s1[i] != '\0')
+	if (ft_strncmp(s1, "", 1) == 0)
 	{
-		if (!is_in_set(s1[i], set))
-		{
-			start = i;
-			break ;
-		}
-		i++;
+		str = ft_calloc(1, 1);
+		return (str);
 	}
 	i = 0;
-	while (s1[i] != '\0')
+	while (in_str(set, s1[i]) == 1 && s1[i] != '\0')
 		i++;
-	i--;
-	while (i >= 0)
+	if (s1[i] == '\0')
 	{
-		if (!is_in_set(s1[i], set))
-		{
-			end = i;
-			break ;
-		}
-		i--;
+		str = ft_calloc(1, 1);
+		return (str);
 	}
-	if (start == end)
-	{
-		trimmed = (char *)malloc(sizeof(char));
-		if (trimmed == NULL)
-			return (NULL);
-		trimmed[0] = '\0';
-		return (trimmed);
-	}
-	// Allocate memory for the trimmed string
-	trimmed = (char *)malloc(sizeof(char) * (end - start + 2));
-	if (trimmed == NULL)
-		return (NULL);
-	// Copy the trimmed string
-	i = start;
-	j = 0;
-	while (i <= end)
-	{
-		trimmed[j] = s1[i];
-		i++;
-		j++;
-	}
-	trimmed[j] = '\0';
-	return (trimmed);
+	left = i;
+	right = ft_strlen(s1) - 1;
+	while (in_str(set, s1[right]) == 1 && right > left)
+		right--;
+	str = ft_substr(s1, left, right - left + 1);
+	return (str);
 }
 /*
 #include <stdio.h>
 
 int	main(void)
 {
-	char const	str[] = "AAAAbbbbbAAAA";
-	char const	set[] = "AAAA";
+	char const	str[] = "abxfg";
+	char const	set[] = "x";
 	
 	
-	printf("%s\n", ft_strtrim(str, set));
+	printf("[%s]\n", ft_strtrim(str, set));
 
 	return (0);
 }*/
