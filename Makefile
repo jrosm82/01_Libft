@@ -6,7 +6,7 @@
 #    By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 20:33:20 by jrosmari          #+#    #+#              #
-#    Updated: 2023/01/24 12:04:40 by jrosmari         ###   ########.fr        #
+#    Updated: 2023/01/24 13:09:15 by jrosmari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,9 @@ FNAME = ft_isalpha ft_isdigit ft_isalnum ft_isascii \
 	ft_strnstr ft_atoi ft_calloc ft_strdup ft_substr \
 	ft_strtrim ft_itoa ft_putchar_fd ft_putstr_fd \
 	ft_putendl_fd ft_putnbr_fd ft_strmapi ft_striteri \
-	ft_split
+	ft_split 
 
-FNAME_BONUS = ft_lstnew 
+FNAME_BONUS = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back
 
 SOURCES_DIR = ./
 SOURCES = $(addprefix $(SOURCES_DIR), $(addsuffix .c, $(FNAME)))
