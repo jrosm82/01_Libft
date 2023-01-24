@@ -6,7 +6,7 @@
 /*   By: jrosmari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:31:04 by jrosmari          #+#    #+#             */
-/*   Updated: 2023/01/23 23:05:00 by jrosmari         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:38:28 by jrosmari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,12 @@ static int	wrd_cnt(char const *s, char c)
 	return (cnt);
 }
 
-static char	**write_split(char **split, char const *s, char c)
+static char	**write_split(char **split, char const *s, char c, int i)
 {
-	int		i;
 	int		j;
 	int		word;
 
 	word = 0;
-	i = 0;
 	while (s[i] == c)
 		i++;
 	while (s[i] != '\0')
@@ -62,15 +60,28 @@ static char	**write_split(char **split, char const *s, char c)
 				return (NULL);
 			j = 0;
 			while (s[i] != c && s[i] != '\0')
-			{
-				split[word][j] = s[i];
-				i++;
-				j++;
-			}
-			split[word][j] = '\0';
-			word++;
+				split[word][j++] = s[i++];
+			split[word++][j] = '\0';
 		}
 	}
+	return (split);
+}
+
+static char	**strnil(char const *s, int i)
+{
+	char	**split;
+
+	split = (char **)malloc(sizeof(char *) * 2);
+	split[1] = 0;
+	i = ft_strlen(s);
+	split[0] = (char *)malloc(sizeof(char *) * (i + 1));
+	i = 0;
+	while (s[i] != '\0')
+	{
+		split[0][i] = s[i];
+		i++;
+	}
+	split[0][i] = '\0';
 	return (split);
 }
 
@@ -83,18 +94,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	if (c == '\0' && ft_strlen(s) > 0)
 	{
-		split = (char **)malloc(sizeof(char *) * 2);
-		split[1] = 0;
-		i = ft_strlen(s);
-		split[0] = (char *)malloc(sizeof(char *) * (i + 1));
-		i = 0;
-		while (s[i] != '\0')
-		{
-			split[0][i] = s[i];
-			i++;
-		}
-		split[0][i] = '\0';
-		return (split);
+		return (strnil(s, i));
 	}
 	words = wrd_cnt(s, c);
 	split = (char **)malloc(sizeof(char *) * (words + 1));
@@ -102,7 +102,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	split[words] = 0;
 	if (words != 0)
-		write_split(split, s, c);
+		write_split(split, s, c, i);
 	return (split);
 }
 /*
